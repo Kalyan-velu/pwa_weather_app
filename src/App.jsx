@@ -53,7 +53,7 @@ function App() {
             <sup>&deg;C</sup>
           </div>
           <div className="info">
-            <img className="city-icon" src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt={weather.weather[0].description} />
+            <img className="city-icon" src={`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt={weather.weather[0].description} />
             <p>{weather.weather[0].description}</p>
           </div>
         </div>)}

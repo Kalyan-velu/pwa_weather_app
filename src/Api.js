@@ -1,6 +1,7 @@
 import axios from "axios"
-const URL = "http://api.openweathermap.org/data/2.5/weather?"
-const geoURL = "http://api.openweathermap.org/geo/1.0/direct?q="
+const URL = "https://api.openweathermap.org/data/2.5/weather?"
+const URL3 = "https://api.openweathermap.org/data/3.0/onecall?"
+const geoURL = "https://api.openweathermap.org/geo/1.0/direct?q="
 const API = "c490ee1413f2c9b4d997e52964d8bb8d"
 
 export const fetchWeather = async (city) => {
