@@ -28,7 +28,7 @@ body {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #5b7693;
+  background-color: #e0e4e8;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -42,7 +42,7 @@ body {
   border-color: #646cff;
 }
 .search > input::placeholder {
-  color: #ccc;
+  color: #353333;
 }
 .search input ~ span {
   position: relative;

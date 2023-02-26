@@ -3,23 +3,39 @@ import react from '@vitejs/plugin-react'
 // import configPwa from './pwa.config'
 import { VitePWA } from 'vite-plugin-pwa'
 
-const pwaPlugin = VitePWA({
-  config: {
-    name: 'WeatherApp', // The name of your app
-    short_name: 'WeatherApp', // The short name of your app
-    theme_color: '#fff', // The theme color of your app
-    background_color: '#fff', // The background color of your app
-    display: 'standalone', // The display mode of your app
-    scope: '/', // The scope of your app
-    start_url: '/', // The start URL of your app
+const pwaOptiona = {
+  mode: 'developement',
+  base: '/',
+  includeAssets: [
+    'favicon.svg',
+    'favicon.ico',
+    'robots.txt',
+    'apple-touch-icon.png',
+  ],
+  manifest: {
+    name: 'WeatherApp',
+    short_name: 'WeatherApp',
+    theme_color: '#fff',
+    background_color: '#fff',
+    display: 'standalone',
+    scope: '/',
+    start_url: '/',
     icons: [
       {
-        src: './icon.png', // The path to your app icon
-        sizes: [96, 128, 192, 256, 384, 512], // The sizes of your app icon
+        src: 'vite.svg',
+        type: 'image/svg+xml',
+        sizes: "144x144"
       },
     ],
   },
-})
+  devOptions: {
+    enabled: process.env.SW_DEV === 'true',
+    /* when using generateSW the PWA plugin will switch to classic */
+    type: 'module',
+    navigateFallback: 'index.html',
+  },
+}
+const pwaPlugin = VitePWA(pwaOptiona)
 
 // https://vitejs.dev/config/
 export default defineConfig({
